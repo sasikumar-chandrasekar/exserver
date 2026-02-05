@@ -1,0 +1,4 @@
+test = true
+testDir = "test"
+testTimeout = 5000
+testEnvironment = "node"

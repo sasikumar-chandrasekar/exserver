@@ -80,17 +80,17 @@ console.log("floor(4.9):", floor(4.9));
 console.log("ceil(4.1):", ceil(4.1));
 
 
+if (import.meta.main) {
+  const server = Bun.serve({
+    port: 3000,
+    routes: {
+      "/": (request) => {
+        return new Response("Hello from Bun server!", {
+          headers: { "Content-Type": "text/plain" },
+        });
+      },
+    }
+  });
 
-
-const server = Bun.serve({
-  port: 3000,
-  routes: {
-    "/": (request) => {
-      return new Response("Hello from Bun server!", {
-        headers: { "Content-Type": "text/plain" },
-      });
-    },
-  }
-});
-
-console.log("Bun server is running on http://localhost:3000");  
+  console.log("Bun server is running on http://localhost:3000");
+}
