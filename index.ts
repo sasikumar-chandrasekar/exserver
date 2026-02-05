@@ -17,52 +17,52 @@ export function divide(a: number, b: number): number {
     throw new Error("Cannot divide by zero");
   }
   return a / b;
-}   
+}
 
 export const PI = 3.14159;
 
-export const E = 2.71828;   
+export const E = 2.71828;
 
 export function circleArea(radius: number): number {
-    return PI * radius * radius;
-    }
+  return PI * radius * radius;
+}
 
 export function circleCircumference(radius: number): number {
-    return 2 * PI * radius;
-    }
+  return 2 * PI * radius;
+}
 
 export function exponentialGrowth(base: number, rate: number, time: number): number {
-    return base * Math.pow(E, rate * time);
-    }
+  return base * Math.pow(E, rate * time);
+}
 
 export function logarithm(value: number, base: number = E): number {
-    return Math.log(value) / Math.log(base);
-    }
+  return Math.log(value) / Math.log(base);
+}
 
 export function power(base: number, exponent: number): number {
-    return Math.pow(base, exponent);
-    }
+  return Math.pow(base, exponent);
+}
 
 export function squareRoot(value: number): number {
-    return Math.sqrt(value);
-    }
+  return Math.sqrt(value);
+}
 
 export function absoluteValue(value: number): number {
-    return Math.abs(value);
-    }
+  return Math.abs(value);
+}
 
 export function round(value: number, decimals: number = 0): number {
-    const factor = Math.pow(10, decimals);
-    return Math.round(value * factor) / factor;
-    }
+  const factor = Math.pow(10, decimals);
+  return Math.round(value * factor) / factor;
+}
 
 export function floor(value: number): number {
-    return Math.floor(value);
-    }
+  return Math.floor(value);
+}
 
 export function ceil(value: number): number {
-    return Math.ceil(value);
-    }
+  return Math.ceil(value);
+}
 
 console.log("add(5, 3):", add(5, 3));
 console.log("subtract(10, 4):", subtract(10, 4));
@@ -81,10 +81,10 @@ console.log("ceil(4.1):", ceil(4.1));
 
 
 if (import.meta.main) {
-  const server = Bun.serve({
+  const _server = Bun.serve({
     port: 3000,
     routes: {
-      "/": (request) => {
+      "/": () => {
         return new Response("Hello from Bun server!", {
           headers: { "Content-Type": "text/plain" },
         });
@@ -93,4 +93,5 @@ if (import.meta.main) {
   });
 
   console.log("Bun server is running on http://localhost:3000");
+  void _server;
 }
